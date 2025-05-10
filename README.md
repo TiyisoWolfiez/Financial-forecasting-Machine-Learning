@@ -33,3 +33,19 @@ The objective is to build and evaluate three ML models that classify whether a s
    ```bash
    git clone https://github.com/your-org/COS314-Assignment3.git
    cd COS314-Assignment3
+   ```
+
+2. Install Python dependencies for MLP
+   ```bash
+   pip install -r mlp_model/requirements.txt
+   ```
+3. Run the respective model scripts as described above.
+
+## Group Mambers
+  - Member 1 : Genetic Programming
+  - Member 2: Multi-Layer Perceptron
+  - Member 3: Decision Tree
+  - Member 4: Report Writer
+
+## Notes
+ - Ensure all models prompt for `seed` and file paths at runtime.
