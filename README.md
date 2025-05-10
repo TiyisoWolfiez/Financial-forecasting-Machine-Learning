@@ -31,8 +31,10 @@ The objective is to build and evaluate three ML models that classify whether a s
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-org/COS314-Assignment3.git
-   cd COS314-Assignment3
+   gh repo clone TiyisoWolfiez/Financial-forecasting-Machine-Learning
+   ```
+   ```bash
+   cd Financial-forecasting-Machine-Learning
    ```
 
 2. Install Python dependencies for MLP
