@@ -23,12 +23,12 @@ public class Main {
             GPAlgorithm gp = new GPAlgorithm(
                 train,
                 seed,
-                50,     // population size
-                5,      // max depth
-                30,     // generations
-                0.3,    // mutation rate
-                0.9,    // crossover rate
-                5       // tournament size
+                50,
+                5,  
+                30,    
+                0.3,   
+                0.9,   
+                5      
             );
 
             Individual best = gp.run();
