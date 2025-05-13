@@ -15,8 +15,10 @@ The objective is to build and evaluate three ML models that classify whether a s
 ##  Models
 
 ### 1. Genetic Programming (GP)
-- Language: Java/C++
-- Command: `java -jar gp_model.jar <seed> <train_file> <test_file>`
+- Language: Java
+- Be on this Directory: `cd gp_model`
+- Command: `javac -d build src/gp/*.java`
+- Run: `java -cp build gp.Main`
 
 ### 2. Multi-Layer Perceptron (MLP)
 - Language: Python
