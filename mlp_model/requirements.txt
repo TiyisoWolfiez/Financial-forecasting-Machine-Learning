@@ -1,1 +1,65 @@
+requirements.txt
+==========
+COS314 - Assignment 3: Multi-Layer Perceptron Classifier
+--------------------------------------------------------
+
+Description:
+------------
+This program implements a Multi-Layer Perceptron (MLP) neural network to classify whether a stock 
+(cryptocurrency) should be purchased based on historical data provided in BTC_train.csv and BTC_test.csv.
+
+The program uses supervised learning techniques and evaluates the model using accuracy and F1 score.
+
+Dependencies:
+-------------
+You must have Python 3 installed and the following Python packages:
+
+- pandas
+- scikit-learn
+- numpy
+
+To install them, run:
+> pip3 install pandas scikit-learn
+
+Files:
+------
+- mlp.py    --> The main Python program that trains and evaluates the MLP classifier
+- BTC_train.csv        --> Training dataset
+- BTC_test.csv         --> Testing dataset
+- README.txt           --> This instructions file
+
+How to Run:
+-----------
+From the terminal (Linux/WSL/Ubuntu):
+
+> python3 mlp.py
+
+Ensure that all files (CSV + Python file) are in the same directory when running the script.
+
+Output:
+-------
+- Console output showing accuracy and F1 score of the classifier on the test data
+- Detailed classification report with precision, recall, and support per class
+
+MLP Model Configuration:
+------------------------
+- Hidden Layers: 2 (with 10 neurons each)
+- Activation Function: ReLU
+- Optimizer: Adam
+- Max Iterations: 500
+- Scaled input features using Min-Max normalization (0 to 1)
+
+Notes:
+------
+- The last column in both CSV files is assumed to be the class label (0 or 1).
+- Ensure CSV files are clean and have no missing values.
+- To change hidden layers or activation function, modify the `MLPClassifier(...)` line in the script.
+
+Group Members:
+--------------
+1. [Name] – MLP Implementation
+2. [Name] – Genetic Programming
+3. [Name] – Decision Tree / Weka
+4. [Name] – Report Compilation & Wilcoxon Analysis
+
 
