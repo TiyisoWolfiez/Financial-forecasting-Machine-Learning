@@ -6,8 +6,8 @@ from sklearn.metrics import accuracy_score, f1_score, classification_report
 import sys
 
 #Load the data
-train_df = pd.read_csv('BTC_train.csv')
-test_df = pd.read_csv('BTC_test.csv')
+train_df = pd.read_csv('../data/BTC_train.csv')
+test_df = pd.read_csv('../data/BTC_test.csv')
 
 #Preprocess Data
 #Assuming last column is the label
