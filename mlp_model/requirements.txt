@@ -34,7 +34,6 @@ From the terminal (Linux/WSL/Ubuntu):
 
 > python3 mlp.py
 
-Ensure that all files (CSV + Python file) are in the same directory when running the script.
 
 Output:
 -------
@@ -57,7 +56,7 @@ Notes:
 
 Group Members:
 --------------
-1. [Name] – MLP Implementation
+1. [Junior Motsepe] – MLP Implementation
 2. [Name] – Genetic Programming
 3. [Name] – Decision Tree / Weka
 4. [Name] – Report Compilation & Wilcoxon Analysis
