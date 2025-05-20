@@ -26,14 +26,16 @@ Files:
 - mlp.py    --> The main Python program that trains and evaluates the MLP classifier
 - BTC_train.csv        --> Training dataset
 - BTC_test.csv         --> Testing dataset
-- README.txt           --> This instructions file
+- requirements.txt           --> This instructions file
 
 How to Run:
 -----------
 From the terminal (Linux/WSL/Ubuntu):
 
 > python3 mlp.py
-
+> Enter random seed value (integer)
+> Enter path to training CSV file (e.g., ../data/BTC_train.csv)
+> Enter path to testing CSV file (e.g., ../data/BTC_test.csv)
 
 Output:
 -------
@@ -56,9 +58,9 @@ Notes:
 
 Group Members:
 --------------
-1. [Junior Motsepe] – MLP Implementation
-2. [Name] – Genetic Programming
-3. [Name] – Decision Tree / Weka
-4. [Name] – Report Compilation & Wilcoxon Analysis
+1. [Junior Motsepe] - MLP Implementation
+2. [Name] - Genetic Programming
+3. [Name] - Decision Tree / Weka
+4. [Name] - Report Compilation & Wilcoxon Analysis
 
 
