@@ -1,60 +1,70 @@
 requirements.txt
-==========
-COS314 - Assignment 3: Multi-Layer Perceptron Classifier
---------------------------------------------------------
+================
+COS314 - Assignment 3: Multi-Layer Perceptron Classifier (Java)
+----------------------------------------------------------------
 
 Description:
 ------------
-This program implements a Multi-Layer Perceptron (MLP) neural network to classify whether a stock 
-(cryptocurrency) should be purchased based on historical data provided in BTC_train.csv and BTC_test.csv.
+This program implements a Multi-Layer Perceptron (MLP) neural network in Java using the Weka library
+to classify whether a stock (cryptocurrency) should be purchased based on historical data
+provided in BTC_train.csv and BTC_test.csv.
 
-The program uses supervised learning techniques and evaluates the model using accuracy and F1 score.
+The program evaluates the model using accuracy and F1 score on both training and testing datasets.
 
 Dependencies:
 -------------
-You must have Python 3 installed and the following Python packages:
+You must have the following installed:
 
-- pandas
-- scikit-learn
-- numpy
+- Java 8 or later
+- Weka 3.9.6 (weka.jar)
+- MTJ (Matrix Toolkit for Java) (mtj.jar)
 
-To install them, run:
-> pip3 install pandas scikit-learn
+To compile:
+> javac -cp .:weka-3-9-6/weka.jar mlp.java
+
+To run:
+> java --add-opens java.base/java.lang=ALL-UNNAMED -cp .:weka-3-9-6/weka.jar:mtj.jar mlp
 
 Files:
 ------
-- mlp.py    --> The main Python program that trains and evaluates the MLP classifier
-- BTC_train.csv        --> Training dataset
-- BTC_test.csv         --> Testing dataset
-- requirements.txt           --> This instructions file
+- mlp.java               --> Java implementation using Weka MultilayerPerceptron
+- BTC_train.csv          --> Training dataset (CSV format)
+- BTC_test.csv           --> Testing dataset
+- weka.jar               --> Weka library
+- mtj.jar                --> Required for matrix operations in MLP
+- requirements.txt       --> This instructions file
 
 How to Run:
 -----------
-From the terminal (Linux/WSL/Ubuntu):
-
-> python3 mlp.py
-> Enter random seed value (integer)
-> Enter path to training CSV file (e.g., ../data/BTC_train.csv)
-> Enter path to testing CSV file (e.g., ../data/BTC_test.csv)
+1. Open terminal in the project directory.
+2. Compile and run as shown above.
+3. When prompted, enter:
+   - Seed value (e.g., 77)
+   - Path to training CSV file (e.g., ../data/BTC_train.csv)
+   - Path to testing CSV file (e.g., ../data/BTC_test.csv)
 
 Output:
 -------
-- Console output showing accuracy and F1 score of the classifier on the test data
-- Detailed classification report with precision, recall, and support per class
+- Accuracy and F1 score on the **training dataset**
+- Accuracy and F1 score on the **testing dataset**
 
-MLP Model Configuration:
-------------------------
-- Hidden Layers: 2 (with 10 neurons each)
-- Activation Function: ReLU
-- Optimizer: Adam
-- Max Iterations: 500
-- Scaled input features using Min-Max normalization (0 to 1)
+Example Output:
+---------------
+=== MLP Classification Report ===
+
+--- Training Set Performance ---
+Accuracy: 0.8912
+F1 Score: 0.8945
+
+--- Testing Set Performance ---
+Accuracy: 0.7430
+F1 Score: 0.7519
 
 Notes:
 ------
-- The last column in both CSV files is assumed to be the class label (0 or 1).
-- Ensure CSV files are clean and have no missing values.
-- To change hidden layers or activation function, modify the `MLPClassifier(...)` line in the script.
+- The last column in the CSV files must be the **class label**.
+- The class label must be **binary (e.g., 0 or 1)** and is automatically converted to **nominal** inside the program using Weka filters.
+- CSV files must be clean (no missing values) and have numeric input features.
 
 Group Members:
 --------------
