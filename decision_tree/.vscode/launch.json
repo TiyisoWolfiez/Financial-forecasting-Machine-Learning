@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Run Decision_Tree_Classifier",
+        "request": "launch",
+        "mainClass": "Decision_Tree_Classifier",
+        "cwd": "${workspaceFolder}/bin",
+        "classPaths": [
+          "${workspaceFolder}/bin",
+          "${workspaceFolder}/lib/weka-stable-3.8.6.jar"
+        ]
+      }
+    ]
+  }
+  
