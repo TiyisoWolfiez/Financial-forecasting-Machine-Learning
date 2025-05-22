@@ -21,7 +21,7 @@ The objective is to build and evaluate three ML models that classify whether a s
 - Run: `java -cp build gp.Main`
 
 ### 2. Multi-Layer Perceptron (MLP)
-- Language: Python
+- Language: Java
 - Dependencies: Listed in `mlp_model/requirements.txt`
 - Command: `python mlp.py --seed <seed> --train <train_file> --test <test_file>`
 
