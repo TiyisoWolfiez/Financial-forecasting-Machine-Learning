@@ -1,8 +1,8 @@
-# 📈 Financial Forecasting with Genetic Programming
+# Financial Forecasting with Genetic Programming
 
 A Java-based implementation of **Genetic Programming (GP)** for financial time-series forecasting and classification. This project evolves mathematical expressions as tree structures to predict binary outcomes from numeric financial data, specifically designed for Bitcoin price movement prediction.
 
-## 🎯 Overview
+## Overview
 
 This system uses evolutionary algorithms to automatically generate and optimize mathematical models for financial forecasting. The GP approach evolves populations of expression trees that can capture complex, non-linear relationships in financial time-series data without requiring manual feature engineering.
 
