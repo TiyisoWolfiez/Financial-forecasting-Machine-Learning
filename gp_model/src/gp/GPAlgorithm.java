@@ -14,8 +14,7 @@ public class GPAlgorithm {
 
     private List<Individual> population;
 
-    public GPAlgorithm(Dataset trainData, int seed, int populationSize, int maxDepth, int generations,
-                       double mutationRate, double crossoverRate, int tournamentSize) {
+    public GPAlgorithm(Dataset trainData, int seed, int populationSize, int maxDepth, int generations, double mutationRate, double crossoverRate, int tournamentSize) {
         this.trainData = trainData;
         this.rand = new Random(seed);
         this.populationSize = populationSize;
@@ -59,7 +58,6 @@ public class GPAlgorithm {
             population = newPop;
             evaluateFitness();
 
-            // log progress
             Individual best = getBest();
             System.out.println("Generation " + gen + ": Best fitness = " + best.fitness);
         }

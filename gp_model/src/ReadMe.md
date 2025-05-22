@@ -34,7 +34,8 @@ Financial-forecasting-Machine-Learning/
 1. **Compile the project**:
 ```bash
 cd gp_model
-mkdir -p build
+```
+```bash
 javac -d build src/gp/*.java
 ```
 
