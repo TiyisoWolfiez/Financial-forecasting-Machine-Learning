@@ -52,7 +52,7 @@ The objective is to build and evaluate three ML models that classify whether a s
 ## Group Mambers
   - Member 1 : Genetic Programming
   - Junior Motsepe: Multi-Layer Perceptron
-  - Member 3: Decision Tree
+  - Tshegofatso Mapheto: Decision Tree
   - Member 4: Report Writer
 
 ## Notes
