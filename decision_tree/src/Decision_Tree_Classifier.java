@@ -41,14 +41,14 @@ public class Decision_Tree_Classifier {
             testData.setClassIndex(testData.numAttributes() - 1);
 
         NumericToNominal convert = new NumericToNominal();
-        convert.setAttributeIndices("last"); // assuming the class attribute is the last
+        convert.setAttributeIndices("last"); 
         convert.setInputFormat(trainData);
         trainData = Filter.useFilter(trainData, convert);
         testData = Filter.useFilter(testData, convert);
 
         J48 tree = new J48();
-        tree.setUnpruned(false);     // Prune to reduce overfitting
-        tree.setConfidenceFactor(0.15f); // Confidence level for pruning (default is 0.25)
+        tree.setUnpruned(false);     
+        tree.setConfidenceFactor(0.15f); 
         tree.setMinNumObj(10); 
         tree.buildClassifier(trainData);
 
@@ -64,19 +64,19 @@ public class Decision_Tree_Classifier {
         double f1Test = evalTest.weightedFMeasure();
 
         System.out.println("==== Decision Tree Results ====");
-        System.out.println("Training Accuracy: " + String.format("%.4f", accTrain));
-        System.out.println("Training F1-Score: " + String.format("%.4f", f1Train));
-        System.out.println("Test Accuracy: " + String.format("%.4f", accTest));
-        System.out.println("Test F1-Score: " + String.format("%.4f", f1Test));
+        System.out.println("| **Model**       | **Seed value** | **Training Acc** | **Training F1** | **Testing Acc** | **Testing F1** |");
+        System.out.println("|-----------------|----------------|------------------|------------------|------------------|----------------|");
+        System.out.printf("| Decision Tree   | %-14d | %-16.4f | %-16.4f | %-16.4f | %-14.4f |\n", seed, accTrain, f1Train, accTest, f1Test);
 
-        // Output to CSV
-        FileWriter writer = new FileWriter("DecisionTree_Results.csv");
-        writer.write("Dataset,Accuracy,F1-Score\n");
-        writer.write("Training," + accTrain + "," + f1Train + "\n");
-        writer.write("Test," + accTest + "," + f1Test + "\n");
-        writer.close();
+        String csvContent = "Model,Seed value,Training Acc,Training F1,Testing Acc,Testing F1\n";
+        csvContent += String.format("Decision Tree,%d,%.4f,%.4f,%.4f,%.4f\n",
+                seed, accTrain, f1Train, accTest, f1Test);
 
-        System.out.println("\nResults saved to DecisionTree_Results.csv");
+        try (FileWriter writer = new FileWriter("Formatted_DecisionTree_Results.csv")) {
+            writer.write(csvContent);
+        }
+
+        System.out.println("\nResults saved to Formatted_DecisionTree_Results.csv");
     }
 
         // Load datasets

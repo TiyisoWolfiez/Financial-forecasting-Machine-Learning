@@ -1,0 +1,2 @@
+Model,Seed value,Training Acc,Training F1,Testing Acc,Testing F1
+Decision Tree,48,0.5291,0.3661,0.5057,0.3397
