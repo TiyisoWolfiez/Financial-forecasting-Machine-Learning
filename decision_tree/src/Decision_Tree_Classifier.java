@@ -47,55 +47,36 @@ public class Decision_Tree_Classifier {
         testData = Filter.useFilter(testData, convert);
 
         J48 tree = new J48();
+        tree.setUnpruned(false);     // Prune to reduce overfitting
+        tree.setConfidenceFactor(0.15f); // Confidence level for pruning (default is 0.25)
+        tree.setMinNumObj(10); 
         tree.buildClassifier(trainData);
 
         // Evaluate
-        Evaluation eval = new Evaluation(trainData);
-        eval.evaluateModel(tree, testData);
+        Evaluation evalTrain = new Evaluation(trainData);
+        evalTrain.evaluateModel(tree, trainData);
+        double accTrain = evalTrain.pctCorrect() / 100.0;
+        double f1Train = evalTrain.weightedFMeasure();
+
+        Evaluation evalTest = new Evaluation(trainData);
+        evalTest.evaluateModel(tree, testData);
+        double accTest = evalTest.pctCorrect() / 100.0;
+        double f1Test = evalTest.weightedFMeasure();
+
+        System.out.println("==== Decision Tree Results ====");
+        System.out.println("Training Accuracy: " + String.format("%.4f", accTrain));
+        System.out.println("Training F1-Score: " + String.format("%.4f", f1Train));
+        System.out.println("Test Accuracy: " + String.format("%.4f", accTest));
+        System.out.println("Test F1-Score: " + String.format("%.4f", f1Test));
 
         // Output to CSV
-        try (PrintWriter writer = new PrintWriter(new FileWriter("decision_tree_results.csv"))) {
-            writer.println("Instance,Actual,Predicted");
-            for (int i = 0; i < testData.numInstances(); i++) {
-                Instance instance = testData.instance(i);
-                double actualClass = instance.classValue();
-                double predictedClass = tree.classifyInstance(instance);
+        FileWriter writer = new FileWriter("DecisionTree_Results.csv");
+        writer.write("Dataset,Accuracy,F1-Score\n");
+        writer.write("Training," + accTrain + "," + f1Train + "\n");
+        writer.write("Test," + accTest + "," + f1Test + "\n");
+        writer.close();
 
-                String actualLabel = testData.classAttribute().value((int) actualClass);
-                String predictedLabel = testData.classAttribute().value((int) predictedClass);
-
-                writer.printf("%d,%s,%s%n", i + 1, actualLabel, predictedLabel);
-            }
-
-            writer.println();
-            writer.println("=== Evaluation Summary ===");
-            writer.printf("Correctly Classified Instances: %d%n", (int) eval.correct());
-            writer.printf("Incorrectly Classified Instances: %d%n", (int) eval.incorrect());
-            writer.printf("Accuracy: %.2f%%%n", eval.pctCorrect());
-
-            writer.println("\n=== Confusion Matrix ===");
-            double[][] confusionMatrix = eval.confusionMatrix();
-            String[] classLabels = new String[testData.numClasses()];
-            for (int i = 0; i < testData.numClasses(); i++) {
-                classLabels[i] = testData.classAttribute().value(i);
-            }
-
-            writer.print("Actual \\ Predicted");
-            for (String label : classLabels) {
-                writer.print("," + label);
-            }
-            writer.println();
-
-            for (int i = 0; i < confusionMatrix.length; i++) {
-                writer.print(classLabels[i]);
-                for (int j = 0; j < confusionMatrix[i].length; j++) {
-                    writer.printf(",%.0f", confusionMatrix[i][j]);
-                }
-                writer.println();
-            }
-        }
-
-        System.out.println("Evaluation complete. Results (with confusion matrix) saved to 'decision_tree_results.csv'.");
+        System.out.println("\nResults saved to DecisionTree_Results.csv");
     }
 
         // Load datasets
