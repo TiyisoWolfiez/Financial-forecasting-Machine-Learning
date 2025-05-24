@@ -44,17 +44,13 @@ The objective is to build and evaluate three ML models that classify whether a s
    cd Financial-forecasting-Machine-Learning
    ```
 
-2. Install Python dependencies for MLP
-   ```bash
-   pip install -r mlp_model/requirements.txt
-   ```
-3. Run the respective model scripts as described above.
+2. Run the respective model scripts as described above.
 
 ## Group Mambers
-  - Member 1 : Genetic Programming
+  - Tiyiso Hlungwani : Genetic Programming
   - Junior Motsepe: Multi-Layer Perceptron
   - Tshegofatso Mapheto: Decision Tree
-  - Member 4: Report Writer
+  - Tumisho Makhene: Report Writer
 
 ## Notes
  - Ensure all models prompt for `seed` and file paths at runtime.
