@@ -5,12 +5,13 @@ The objective is to build and evaluate three ML models that classify whether a s
 
 ## File Structure
 
-- `report/` — PDF report detailing our methodology, models, and evaluation (Wilcoxon signed-rank test).
+- `report.pdf` — PDF report detailing our methodology, models, and evaluation (Wilcoxon signed-rank test).
 - `data/` — Training and testing datasets (provided).
 - `gp_model/` — Genetic Programming implementation in Java.
 - `mlp_model/` — Python implementation of Multi-Layer Perceptron (using a library like Keras or scikit-learn).
 - `decision_tree/` — Weka-based J48 Decision Tree implementation.
 - `results/` — Performance metrics, including accuracy and F1 score tables.
+- `wilcoxon signed-rank test/` - Python implementatiion of Wilcoxon signed-Rank Test for perfromance on GP and MLP
 
 ##  Models
 
