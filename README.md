@@ -31,6 +31,10 @@ The objective is to build and evaluate three ML models that classify whether a s
 - Be in this Directory: 'cd decision_tree'
 - command: 'usr/lib/jvm/java-8-openjdk-amd64/bin/javac -cp "lib/weka-3-8-0-monolithic.jar" -d bin src/Decision_Tree_Classifier.java'
 - Run: " /usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djava.awt.headless=true -cp "bin:lib/weka-3-8-0-monolithic.jar" src.Decision_Tree_Classifier"
+
+- or command: javac -cp lib/weka-3-8-0-monolithic.jar -d . src/Decision_Tree_Classifier.java
+- jar cfm DecisionTreeClassifier.jar manifest.txt src/
+- Run: java -jar DecisionTreeClassifier.jar
 - Tool: Weka
 - Command: See `decision_tree/run_weka_j48.bat` for setup
 
