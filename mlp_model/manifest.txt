@@ -1,0 +1,2 @@
+Main-Class: mlp
+Class-Path: weka-3-9-6/weka.jar mtj.jar

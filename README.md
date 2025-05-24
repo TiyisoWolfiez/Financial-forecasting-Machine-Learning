@@ -17,23 +17,20 @@ The objective is to build and evaluate three ML models that classify whether a s
 ### 1. Genetic Programming (GP)
 - Language: Java
 - Be on this Directory: `cd gp_model`
-- Run: `-jar gp_forecaster.jar`
+- Run The Jar: `-jar gp_forecaster.jar`
 
 ### 2. Multi-Layer Perceptron (MLP)
 - Language: Java
 - Dependencies: Listed in `mlp_model/requirements.txt`
 - Be in this Directory: `cd mlp_model`
-- Run: `java -jar mlp.jar`
-`
-- Be in this Directory: `cd mlp_model`
-- Run: `java -jar mlp.jar`
+- Run The Jar: `java -jar mlp.jar`
 `
 
 ### 3. Decision Tree (J48)
 - Language: Java
 - Be in this Directory: `cd decision_tree`
 - command: `usr/lib/jvm/java-8-openjdk-amd64/bin/javac -cp lib/weka-3-8-0-monolithic.jar -d bin src/Decision_Tree_Classifier.java`
-- Run: `/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djava.awt.headless=true -cp bin:lib/weka-3-8-0-monolithic.jar" src.Decision_Tree_Classifier`
+- Run The Jar: `java -Djava.awt.headless=true -cp bin:lib/weka-3-8-0-monolithic.jar src.Decision_Tree_Classifier`
 - Tool: Weka
 - Command: See `decision_tree/run_weka_j48.bat` for setup
 

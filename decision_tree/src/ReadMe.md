@@ -1,96 +1,64 @@
-# Financial Forecasting with Genetic Programming
+# Decision Tree (J48) Classifier
 
-This project applies **Genetic Programming (GP)** to the problem of financial market prediction. Using a symbolic regression approach, the system evolves mathematical expressions that aim to classify financial market movements based on input features (e.g., normalized price indicators).
+A Java implementation of the J48 decision tree classifier using the Weka machine learning library.
 
-## Project Overview
-* **Goal**: Use genetic programming to evolve programs that predict financial outcomes.
-* **Input**: Preprocessed, normalized time-series financial data.
-* **Output**: An evolved expression (tree) that classifies each instance.
-* **Evaluation**: Accuracy on unseen test data.
+## Requirements
 
-## Folder Structure
+- **Language:** Java 8+
+- **Dependencies:** Weka 3.8 (weka-3-8-0-monolithic.jar included in `lib/`)
 
-```
-Financial-forecasting-Machine-Learning/
-├── data/
-│   ├── BTC_train.csv
-│   └── BTC_test.csv
-├── gp_model/
-│   ├── src/
-│   │   └── gp/
-│   │       ├── Dataset.java
-│   │       ├── Node.java
-│   │       ├── FunctionNode.java
-│   │       ├── TerminalNode.java
-│   │       ├── Individual.java
-│   │       ├── GeneticProgramming.java
-│   │       └── Main.java
-│   └── build/
-└── README.md
-```
+## Setup
 
-## How to Build & Run
-
-1. **Compile the project**:
+Navigate to the project directory:
 ```bash
-cd gp_model
-mkdir -p build
-javac -d build src/gp/*.java
+cd decision_tree
 ```
 
-2. **Run the program**:
+## Building the JAR
+
+Compile the Java source code and create the JAR file:
+
 ```bash
-java -cp build gp.Main
+/usr/lib/jvm/java-8-openjdk-amd64/bin/javac -cp lib/weka-3-8-0-monolithic.jar -d bin src/Decision_Tree_Classifier.java
+cd bin
+jar cf ../DecisionTree.jar src/*.class
+cd ..
 ```
 
-You will be prompted to:
-* Enter a **random seed** (e.g., `1108`)
-* Enter path to **training dataset** (e.g., `../data/BTC_train.csv`)
-* Enter path to **test dataset** (e.g., `../data/BTC_test.csv`)
+## Running the Application
 
-## Dataset Format
+Execute the compiled JAR file:
 
-The dataset should be a **tab-separated** `.csv` file (`.tsv`) with no missing values.
-
-**Example:**
-```
-Open	High	Low	Close	Adj Close	Output
--1.104	-1.103	-1.103	-1.100	-1.460	0
--1.098	-1.094	-1.097	-1.090	-1.404	1
-...
+```bash
+/usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djava.awt.headless=true -cp "DecisionTree.jar:lib/weka-3-8-0-monolithic.jar" src.Decision_Tree_Classifier
 ```
 
-* The last column (`Output`) must be `0` or `1`.
-* All other columns are numeric features.
+## Usage
 
-## GP Configuration
+When you run the application, you will be prompted to provide:
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| Population size | 50 | Number of programs in each generation |
-| Max tree depth | 5 | Prevents overly complex expressions |
-| Generations | 30 | Evolution cycles |
-| Mutation rate | 0.3 | Chance of random mutation |
-| Crossover rate | 0.9 | Recombination chance |
-| Tournament size | 5 | Selection pressure |
-| Initialization | Half-and-Half Ramp | Prevents bloat, encourages diversity |
+1. **Training CSV file path** - Path to your training dataset
+2. **Testing CSV file path** - Path to your testing dataset  
+3. **Random seed value** - Integer value for reproducible results
 
-## Sample Output
+## Output
+
+The classification results will be automatically saved to `DecisionTree_Results.csv` in the current directory.
+
+## Quick Start
+
+If you prefer to skip the compilation step, you can use the prebuilt `DecisionTree.jar` included in this repository. Just ensure that Java 8+ and the Weka JAR file are available in your environment.
+
+## Directory Structure
 
 ```
-Generation 29: Best fitness = 0.145
-Best Tree: ((((x3 + 1.0) - x1) / x0) + ... )
-Test Accuracy: 68.82%
+decision_tree/
+├── src/
+│   └── Decision_Tree_Classifier.java
+├── lib/
+│   └── weka-3-8-0-monolithic.jar
+├── bin/
+│   └── (compiled classes)
+├── DecisionTree.jar
+└── DecisionTree_Results.csv (generated after running)
 ```
-
-The best tree is a symbolic expression composed of operations over features `x0`, `x1`, ..., representing the inputs (e.g., Open, High, Low, Close, Adj Close).
-
-## Next Steps
-* Add bloat control (penalize overly complex trees)
-* Export best tree as executable expression
-* Compare with traditional ML models
-
-## Author
-* **Tiyiso**
-* Final year Computer Science student
-* COS314 - Artificial Intelligence Assignment 3
