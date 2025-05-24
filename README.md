@@ -17,7 +17,7 @@ The objective is to build and evaluate three ML models that classify whether a s
 ### 1. Genetic Programming (GP)
 - Language: Java
 - Be on this Directory: `cd gp_model`
-- Run The Jar: `-jar gp_forecaster.jar`
+- Run The Jar: `java -jar gp_forecaster.jar`
 
 ### 2. Multi-Layer Perceptron (MLP)
 - Language: Java
