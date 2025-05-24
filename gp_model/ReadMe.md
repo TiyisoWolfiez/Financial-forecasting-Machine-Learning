@@ -26,12 +26,11 @@ Financial-forecasting-Machine-Learning/
 │   ├── src/
 │   │   └── gp/
 │   │       ├── Dataset.java       # Data loading and preprocessing
-│   │       ├── FunctionNode.java  # Mathematical operators (+, -, *, /)
-│   │       ├── TerminalNode.java  # Variables and constants
-│   │       ├── Node.java          # Abstract base class for tree nodes
-│   │       ├── Individual.java    # GP individual (expression tree)
-│   │       ├── GeneticProgramming.java # Main GP algorithm
-│   │       └── Main.java          # Application entry point
+│   │       ├── GPAlgorithm.java  # Mathematical operators (+, -, *, /)
+│   │       ├── GPNode.java
+│   │       ├── Main.java
+│   │       ├── Tree.java
+│   │       ├── TreePrinter.java 
 │   ├── build/                     # Compiled .class files
 │   ├── manifest.txt               # JAR manifest configuration
 │   └── gp_forecaster.jar          #  Executable JAR file
@@ -43,7 +42,7 @@ Financial-forecasting-Machine-Learning/
 ## Requirements
 
 - **Java Development Kit (JDK) 8+**
-- **Command Line Interface** (Terminal/CMD/PowerShell)
+- **Command Line Interface** (Terminal/CMD/Bash)
 - **CSV Data Files** with appropriate format
 
 ### Data Format
