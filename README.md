@@ -51,6 +51,3 @@ The objective is to build and evaluate three ML models that classify whether a s
   - Junior Motsepe: Multi-Layer Perceptron
   - Tshegofatso Mapheto: Decision Tree
   - Tumisho Makhene: Report Writer
-
-## Notes
- - Ensure all models prompt for `seed` and file paths at runtime.
