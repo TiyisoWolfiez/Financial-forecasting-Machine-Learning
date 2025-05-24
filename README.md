@@ -25,6 +25,9 @@ The objective is to build and evaluate three ML models that classify whether a s
 - Be in this Directory: `cd mlp_model`
 - Run: `java -jar mlp.jar`
 `
+- Be in this Directory: `cd mlp_model`
+- Run: `java -jar mlp.jar`
+`
 
 ### 3. Decision Tree (J48)
 - Language: Java
